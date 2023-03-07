@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<di>, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Farenheit to Celsius </h2>
+            <input type="text" id="submit1" placeholder="Enter Farenheit Value">
+            <input type="submit" value="Convert" onclick="faren()" id="submit">
+            <div id="result">
+            </div>
+        </div>
+    </div>
+    <style>
+        
+    *{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+h2{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.container{
+    display: flex;
+    height: 450px;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px ;
+    margin: auto;
+    margin-top: 10%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: whitesmoke;
+}
+#submit1{
+    padding: 0px 10px 10px 10px;
+    width: 85%;
+    margin-top:20px;
+    color:black;
+    font-weight: bold;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid green;
+}
+#result{
+    padding: 10px 10px 10px 10px;
+    width: 85%;
+    margin-top:20px;
+    color:black;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    padding: 10px 10px 10px 10px;
+    width: 85%;
+    margin-top:20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+#submit:hover{
+    cursor: pointer;
+}
+
+
+    </style>
+</body>
+<script>
+     function faren(){
+        if(document.getElementById("submit1").value ==0){
+            document.getElementById("result").innerHTML="Enter Some Values !";
+        }
+        if(document.getElementById("submit1").value !=0){
+            const f=document.getElementById("submit1").value;
+            const cel=((Number(f)-32)*5)/9;
+            const v=document.getElementById("result");
+            v.innerHTML=f+" °F = "+cel.toFixed(2) + " °C";
+        }
+    }
+</script>
+</html>
