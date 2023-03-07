@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<di>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Palindrome or Not</h2>
+            <input type="text" id="submit1" placeholder="Enter the Sentence">
+            <input type="submit" value="Check" onclick="faren()" id="submit">
+            <div id="result">
+            </div>
+        </div>
+    </div>
+    <style>
+        
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+h2{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.container{
+    display: flex;
+    height: 450px;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px ;
+    margin: auto;
+    margin-top: 10%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: whitesmoke;
+}
+#submit1{
+    padding: 10px 10px 10px 10px;
+    width: 85%;
+    height:10%;
+    margin-top:20px;
+    color:black;
+    font-weight: bold;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid green;
+}
+#result{
+    padding: 10px 10px 10px 10px;
+    width: 85%;
+    margin-top:20px;
+    color:black;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    padding: 10px 10px 10px 10px;
+    width: 85%;
+    margin-top:20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+#submit:hover{
+    cursor: pointer;
+}
+
+
+    </style>
+</body>
+<script>
+    function rev(str){
+        var newString = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+            newString += str[i];
+        }
+        return newString;
+    }
+     function faren(){
+        if(document.getElementById("submit1").value !=0){
+        let str=document.getElementById("submit1").value;
+       
+        let rmspc=str.replace( /\s/g, '').toLowerCase();
+        
+        let temp=rev(rmspc);
+        if(rmspc===temp){
+        document.getElementById("result").innerHTML="It is a Palindrome";}
+        else{
+        document.getElementById("result").innerHTML="It is Not a Palindrome";}
+    }
+    else{
+        document.getElementById("result").innerHTML="Enter Some Sentence";
+    }
+}
+</script>
+</html>
